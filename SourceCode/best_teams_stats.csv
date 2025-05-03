@@ -1,0 +1,224 @@
+Statistic,Type,Top Teams,Score
+Age,Mean,Fulham,28.80448318804483
+Age,Median,Fulham,28.81095890410959
+Age,Std,Brighton-and-Hove-Albion,5.170691932287595
+Assists,Mean,Liverpool,2.8095238095238093
+Assists,Median,Liverpool,2.0
+Assists,Std,Liverpool,3.9701265423037535
+Ast,Mean,Liverpool,0.1476190476190476
+Ast,Median,Liverpool,0.14
+Ast,Std,Chelsea,0.1839414622603113
+Att 3rd,Mean,Manchester-City,343.48
+Att 3rd,Median,Manchester-City,324.0
+Att 3rd,Std,Liverpool,282.0938884569496
+Att Pen,Mean,Liverpool,55.80952380952381
+Att Pen,Median,Liverpool,42.0
+Att Pen,Std,Liverpool,72.30049726496979
+Blocks,Mean,Crystal-Palace,20.476190476190474
+Blocks,Median,Crystal-Palace,19.0
+Blocks,Std,Brentford,18.334328977293364
+CPA,Mean,Manchester-City,14.04
+CPA,Median,Liverpool,5.0
+CPA,Std,Liverpool,25.809189946882984
+CS%,Mean,Brentford,5.504761904761905
+CS%,Median,"Arsenal, Aston-Villa, Bournemouth, Brentford, Brighton-and-Hove-Albion, Chelsea, Crystal-Palace, Everton, Fulham, Ipswich-Town, Leicester-City, Liverpool, Manchester-City, Manchester-United, Newcastle-United, Nottingham-Forest, Southampton, Tottenham-Hotspur, West-Ham-United, Wolverhampton-Wanderers",0.0
+CS%,Std,Brentford,21.916899328839296
+Carries,Mean,Manchester-City,643.48
+Carries,Median,Tottenham-Hotspur,564.0
+Carries,Std,Liverpool,454.4827986686782
+Cmp,Mean,Liverpool,778.0952380952381
+Cmp,Median,Tottenham-Hotspur,693.0
+Cmp,Std,Liverpool,629.732554721598
+Cmp%,Mean,Manchester-City,86.54800000000002
+Cmp%,Median,Manchester-City,87.7
+Cmp%,Std,Wolverhampton-Wanderers,8.756474736009437
+Crs,Mean,Fulham,36.81818181818182
+Crs,Median,Fulham,15.0
+Crs,Std,Fulham,50.39901393936796
+CrsPA,Mean,Fulham,4.227272727272728
+CrsPA,Median,Fulham,2.5
+CrsPA,Std,Fulham,6.711268549322516
+Def 3rd,Mean,Brentford,348.85714285714283
+Def 3rd,Median,Wolverhampton-Wanderers,304.0
+Def 3rd,Std,Brentford,401.4415630841288
+Def Pen,Mean,Brentford,138.52380952380952
+Def Pen,Median,"Tottenham-Hotspur, Wolverhampton-Wanderers",55.0
+Def Pen,Std,Brentford,274.65207427718786
+Defensive: Att,Mean,Liverpool,28.285714285714285
+Defensive: Att,Median,Newcastle-United,27.0
+Defensive: Att,Std,Liverpool,27.880356628176152
+Defensive: Lost,Mean,Crystal-Palace,14.047619047619047
+Defensive: Lost,Median,Crystal-Palace,15.0
+Defensive: Lost,Std,Liverpool,13.7852578261465
+Dis,Mean,Newcastle-United,17.652173913043477
+Dis,Median,Arsenal,13.5
+Dis,Std,West-Ham-United,21.959963570097287
+Dist,Mean,Crystal-Palace,18.142857142857142
+Dist,Median,Nottingham-Forest,18.6
+Dist,Std,Leicester-City,8.482205808904625
+Expected: xAG,Mean,Liverpool,2.628571428571429
+Expected: xAG,Median,Manchester-City,1.5
+Expected: xAG,Std,Liverpool,3.120599759203807
+Expected: xG,Mean,Liverpool,3.628571428571429
+Expected: xG,Median,Liverpool,1.7
+Expected: xG,Std,Liverpool,5.487544337601552
+Fld,Mean,Newcastle-United,17.608695652173914
+Fld,Median,Crystal-Palace,18.0
+Fld,Std,Newcastle-United,23.457387148992265
+Fls,Mean,Bournemouth,19.82608695652174
+Fls,Median,"Bournemouth, Everton, Fulham, Liverpool",15.0
+Fls,Std,Bournemouth,17.739663248605172
+G/sh,Mean,Arsenal,0.1304545454545454
+G/sh,Median,Arsenal,0.13
+G/sh,Std,Manchester-City,0.2047356018543591
+GA90,Mean,Leicester-City,0.315
+GA90,Median,"Arsenal, Aston-Villa, Bournemouth, Brentford, Brighton-and-Hove-Albion, Chelsea, Crystal-Palace, Everton, Fulham, Ipswich-Town, Leicester-City, Liverpool, Manchester-City, Manchester-United, Newcastle-United, Nottingham-Forest, Southampton, Tottenham-Hotspur, West-Ham-United, Wolverhampton-Wanderers",0.0
+GA90,Std,Leicester-City,0.9426823431039748
+GCA,Mean,Liverpool,6.476190476190476
+GCA,Median,Liverpool,4.0
+GCA,Std,Liverpool,6.569772047940839
+GCA90,Mean,Liverpool,0.3480952380952381
+GCA90,Median,Liverpool,0.34
+GCA90,Std,Arsenal,0.3097394520214178
+Gls,Mean,Manchester-City,0.1832
+Gls,Median,Arsenal,0.1
+Gls,Std,Aston-Villa,0.2921748407480315
+Goals,Mean,Liverpool,3.761904761904762
+Goals,Median,Arsenal,2.0
+Goals,Std,Liverpool,6.503112807761847
+Int,Mean,Bournemouth,14.0
+Int,Median,"Crystal-Palace, Nottingham-Forest",11.0
+Int,Std,Liverpool,15.74771336386576
+KP,Mean,Liverpool,22.0
+KP,Median,"Bournemouth, Liverpool",11.0
+KP,Std,Liverpool,22.645087767549057
+Long Cmp%,Mean,Liverpool,60.32380952380953
+Long Cmp%,Median,Manchester-City,62.5
+Long Cmp%,Std,Newcastle-United,19.802822492163248
+Matches,Mean,Liverpool,24.476190476190474
+Matches,Median,Crystal-Palace,29.0
+Matches,Std,Manchester-United,10.966148378369237
+Medium Cmp%,Mean,Manchester-City,89.57999999999998
+Medium Cmp%,Median,Manchester-City,92.1
+Medium Cmp%,Std,Everton,12.291467494167373
+Mid 3rd,Mean,Liverpool,497.5238095238095
+Mid 3rd,Median,Tottenham-Hotspur,393.0
+Mid 3rd,Std,Liverpool,465.1158585823127
+Minutes,Mean,Ipswich-Town,276.1666666666667
+Minutes,Median,Ipswich-Town,146.5
+Minutes,Std,Arsenal,353.66457866053565
+Mis,Mean,Bournemouth,22.956521739130437
+Mis,Median,Liverpool,19.0
+Mis,Std,Liverpool,24.78219406866839
+Mis: Lost,Mean,Crystal-Palace,27.142857142857142
+Mis: Lost,Median,Bournemouth,22.0
+Mis: Lost,Std,Nottingham-Forest,24.86326242032244
+Off,Mean,Nottingham-Forest,3.5454545454545454
+Off,Median,Newcastle-United,2.0
+Off,Std,Everton,6.307591797644667
+PK Save%,Mean,Liverpool,4.761904761904762
+PK Save%,Median,"Arsenal, Aston-Villa, Bournemouth, Brentford, Brighton-and-Hove-Albion, Chelsea, Crystal-Palace, Everton, Fulham, Ipswich-Town, Leicester-City, Liverpool, Manchester-City, Manchester-United, Newcastle-United, Nottingham-Forest, Southampton, Tottenham-Hotspur, West-Ham-United, Wolverhampton-Wanderers",0.0
+PK Save%,Std,Liverpool,21.82178902359924
+PPA,Mean,Liverpool,18.61904761904762
+PPA,Median,Manchester-City,11.0
+PPA,Std,Liverpool,22.59972608346435
+Pass,Mean,Crystal-Palace,14.571428571428571
+Pass,Median,Crystal-Palace,13.0
+Pass,Std,Crystal-Palace,12.765466809213946
+Passing: 1/3,Mean,Liverpool,67.71428571428571
+Passing: 1/3,Median,Fulham,44.5
+Passing: 1/3,Std,Liverpool,70.61454726693562
+Passing: PrgP,Mean,Liverpool,81.38095238095238
+Passing: PrgP,Median,Liverpool,67.0
+Passing: PrgP,Std,Liverpool,67.2699607480755
+Posession: PrgR,Mean,Liverpool,80.61904761904762
+Posession: PrgR,Median,Liverpool,54.0
+Posession: PrgR,Std,Liverpool,107.99003481362352
+Possession: 1/3,Mean,Manchester-City,30.36
+Possession: 1/3,Median,Manchester-City,23.0
+Possession: 1/3,Std,Manchester-City,26.888473366853685
+Possession: Att,Mean,Arsenal,29.727272727272727
+Possession: Att,Median,Arsenal,22.5
+Possession: Att,Std,West-Ham-United,44.0182916524483
+PrgC,Mean,Manchester-City,40.56
+PrgC,Median,Manchester-City,34.0
+PrgC,Std,Manchester-City,43.47995706836274
+ProDist,Mean,Manchester-City,1994.16
+ProDist,Median,Manchester-City,1674.0
+ProDist,Std,Manchester-City,1516.486500654281
+ProgC,Mean,Manchester-City,40.56
+ProgC,Median,Manchester-City,34.0
+ProgC,Std,Manchester-City,43.47995706836274
+Progression: PrgP,Mean,Liverpool,81.38095238095238
+Progression: PrgP,Median,Liverpool,67.0
+Progression: PrgP,Std,Liverpool,67.2699607480755
+Progression: PrgR,Mean,Liverpool,80.61904761904762
+Progression: PrgR,Median,Liverpool,54.0
+Progression: PrgR,Std,Liverpool,107.99003481362352
+Rec,Mean,Liverpool,769.6666666666666
+Rec,Median,Fulham,632.5
+Rec,Std,Liverpool,567.9636725472267
+Recov,Mean,Bournemouth,71.43478260869566
+Recov,Median,Liverpool,62.0
+Recov,Std,Newcastle-United,57.43929601999599
+Red Cards,Mean,Arsenal,0.2272727272727272
+Red Cards,Median,"Arsenal, Aston-Villa, Bournemouth, Brentford, Brighton-and-Hove-Albion, Chelsea, Crystal-Palace, Everton, Fulham, Ipswich-Town, Leicester-City, Liverpool, Manchester-City, Manchester-United, Newcastle-United, Nottingham-Forest, Southampton, Tottenham-Hotspur, West-Ham-United, Wolverhampton-Wanderers",0.0
+Red Cards,Std,Arsenal,0.5284134548067254
+SCA,Mean,Liverpool,49.80952380952381
+SCA,Median,Liverpool,35.0
+SCA,Std,Chelsea,45.69027838021496
+SCA90,Mean,Liverpool,2.6333333333333333
+SCA90,Median,Brighton-and-Hove-Albion,2.81
+SCA90,Std,Bournemouth,1.8688972885364288
+Save%,Mean,Bournemouth,10.434782608695652
+Save%,Median,"Arsenal, Aston-Villa, Bournemouth, Brentford, Brighton-and-Hove-Albion, Chelsea, Crystal-Palace, Everton, Fulham, Ipswich-Town, Leicester-City, Liverpool, Manchester-City, Manchester-United, Newcastle-United, Nottingham-Forest, Southampton, Tottenham-Hotspur, West-Ham-United, Wolverhampton-Wanderers",0.0
+Save%,Std,Bournemouth,27.582909871803725
+Sh,Mean,Brentford,8.19047619047619
+Sh,Median,"Brentford, Tottenham-Hotspur, West-Ham-United, Wolverhampton-Wanderers",4.0
+Sh,Std,Brentford,12.131030655385583
+Short Cmp%,Mean,Manchester-City,92.152
+Short Cmp%,Median,Manchester-City,94.3
+Short Cmp%,Std,Brentford,7.891134265744057
+SoT%,Mean,Nottingham-Forest,35.53181818181818
+SoT%,Median,Nottingham-Forest,33.95
+SoT%,Std,Nottingham-Forest,27.531304889484424
+SoT/90,Mean,Fulham,0.5436363636363636
+SoT/90,Median,Liverpool,0.35
+SoT/90,Std,Aston-Villa,0.6725238730248614
+Starts,Mean,Liverpool,17.80952380952381
+Starts,Median,Brentford,21.0
+Starts,Std,Brentford,12.62593702321874
+Succ%,Mean,Liverpool,52.2952380952381
+Succ%,Median,Liverpool,48.0
+Succ%,Std,Southampton,30.262145304383917
+Tkl,Mean,Crystal-Palace,32.61904761904762
+Tkl,Median,Liverpool,26.0
+Tkl,Std,Crystal-Palace,29.189854728100634
+TklW,Mean,Crystal-Palace,19.142857142857142
+TklW,Median,Brentford,16.0
+TklW,Std,Crystal-Palace,18.12259836305411
+Tkld%,Mean,Crystal-Palace,45.94285714285714
+Tkld%,Median,Manchester-United,49.2
+Tkld%,Std,Southampton,29.614724320035872
+TotDist,Mean,Liverpool,13238.142857142857
+TotDist,Median,Liverpool,11124.0
+TotDist,Std,Liverpool,11217.987712980052
+Touches,Mean,Liverpool,1102.047619047619
+Touches,Median,Fulham,950.0
+Touches,Std,Liverpool,814.8852358578156
+Unnamed: 0,Value,Wolverhampton-Wanderers,20.0
+Won,Mean,Brentford,26.0
+Won,Median,Bournemouth,20.0
+Won,Std,Brentford,29.816103031751148
+Won%,Mean,Southampton,54.17241379310346
+Won%,Median,Brentford,55.1
+Won%,Std,Chelsea,27.32208911935824
+Yellow Cards,Mean,Bournemouth,3.782608695652174
+Yellow Cards,Median,"Bournemouth, Everton, Liverpool",3.0
+Yellow Cards,Std,Chelsea,3.2505620815720238
+xG per 90,Mean,Aston-Villa,0.1928571428571428
+xG per 90,Median,Newcastle-United,0.11
+xG per 90,Std,Aston-Villa,0.2471145654663206
+xGA per 90,Mean,Chelsea,0.153076923076923
+xGA per 90,Median,"Crystal-Palace, Liverpool",0.11
+xGA per 90,Std,Chelsea,0.1694171002176399
