@@ -15,7 +15,8 @@ df = dfclean(df, df.columns[7:])
 
 with open('top_3.txt', 'w', encoding='utf-8') as f:
     for stats in df.columns[7:]:
-            
+            print(f"Current statistic: {stats}\n")
+            f.write(f"Current statistic: {stats}\n")
             other_colls=[ col for col in df.columns if col!=stats and col!='Name']
             display_colls=['Name', stats]+other_colls# create columns displayed in result like 'Name'-current stat-other cols( like 'Matches'-'Minutes'...)
             # Get top 3 highest and lowest
