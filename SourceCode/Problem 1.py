@@ -49,7 +49,6 @@ def scrape_team_data(driver, team_url):
     try:
         team_name = team_url.split('/')[-1].replace('-Stats', '')
         print(f"\nScraping team: {team_name}:{team_url}")
-        
         driver.get(team_url)
         time.sleep(2)
         
@@ -85,8 +84,8 @@ def scrape_team_data(driver, team_url):
                 if not row.find_elements(By.CSS_SELECTOR, "th[data-stat='player']"):
                     continue
                 
-                mins_text = get_stat(row, "minutes")
-                mins = int(mins_text.replace(",", "")) if mins_text.replace(",", "").isdigit() else 0
+                min_stat = get_stat(row, "minutes")
+                mins = int(min_stat.replace(",", "")) if min_stat.replace(",", "").isdigit() else 0
                 if mins <= 90:
                     continue
                 
@@ -99,7 +98,7 @@ def scrape_team_data(driver, team_url):
                     'Age': get_stat(row, "age"),
                     'Matches': get_stat(row, "games"),
                     'Starts': get_stat(row, "games_starts"),
-                    'Minutes': mins_text,
+                    'Minutes': min_stat,
                     'Goals': get_stat(row, "goals"),
                     'Assists': get_stat(row, "assists"),
                     'Yellow Cards': get_stat(row, "cards_yellow"),
@@ -112,8 +111,7 @@ def scrape_team_data(driver, team_url):
                     'Gls': get_stat(row, "goals_per90"),
                     'Ast': get_stat(row, "assists_per90"),
                     'xG per 90': get_stat(row, "xg_per90"),
-                    'xGA per 90': get_stat(row, "xg_assist_per90"),
-    #                 
+                    'xGA per 90': get_stat(row, "xg_assist_per90"),          
                 }
             except Exception as e:
                 print(f"Error collecting standard stats for a player: {e}")
@@ -211,7 +209,6 @@ def scrape_team_data(driver, team_url):
                                 })
                       except Exception as e:
                         print(f"Error processing {table_name} stats for {player_name}: {e}")
-                        # else:
                 except Exception as e:
                     print(f"Error reading rows from {table_name} table: {e}")
 
@@ -225,19 +222,14 @@ def scrape_team_data(driver, team_url):
             return []
   
 def main():
-    print("Starting Premier League player data collection...")
     driver = setup_driver()
-    
-    if not driver:
-        print("Failed to initialize WebDriver")
-        return  
     try:
+        # Get team links from the initial link
         team_links = get_team_links(driver)
-
         if not team_links:
             print("No team links found")
             return
-
+        #Create all_players to store player data
         all_players = []
         for link in team_links: 
             team_players = scrape_team_data(driver, link)
@@ -246,19 +238,12 @@ def main():
             time.sleep(2)
 
         data_sorted = sorted(all_players, key=lambda x: x['Name'])
-        df=pd.DataFrame(data_sorted,columns=[
-        'Name', 'Nation', 'Team', 'Position', 'Age', 'Matches', 'Starts', 'Minutes',
-        'Goals', 'Assists', 'Yellow Cards', 'Red Cards', 'Expected: xG', 'Expected: xAG', 'PrgC', 'Progression: PrgP', 'Progression: PrgR',
-        'Gls', 'Ast', 'xG per 90', 'xGA per 90', 'GA90', 'Save%', 'CS%', 'PK Save%',
-        'SoT%', 'SoT/90', 'G/sh', 'Dist', 'Cmp', 'Cmp%', 'TotDist',
-        'Short Cmp%', 'Medium Cmp%', 'Long Cmp%', 'KP', 'Passing: 1/3', 'PPA', 'CrsPA','Passing: PrgP',
-        'SCA', 'SCA90', 'GCA', 'GCA90', 'Tkl', 'TklW', 'Defensive: Att', 'Defensive: Lost', 'Blocks',
-        'Sh', 'Pass', 'Int', 'Touches', 'Def Pen', 'Def 3rd', 'Mid 3rd', 'Att 3rd',
-        'Att Pen', 'Possession: Att', 'Succ%', 'Tkld%', 'Carries', 'ProDist', 'ProgC','Possession: 1/3',
-        'CPA', 'Mis', 'Dis', 'Rec','Posession: PrgR', 'Fls', 'Fld', 'Off', 'Crs', 'Recov', 'Won', 'Mis: Lost', 'Won%'
-    ])# Create Dataframe form player data with the above columns 
+        cols=all_players[1].keys() # Get stat columns 
+        df=pd.DataFrame(data_sorted,columns=cols)
+        # Create Dataframe form player data with the above columns 
         df.fillna('N/a',inplace=True)
         df.to_csv('results.csv',index=True,encoding='utf-8')
+        print(df)
     except Exception as e:
         print(f"Error in main execution: {e}")
     finally:
