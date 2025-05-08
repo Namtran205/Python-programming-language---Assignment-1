@@ -5,10 +5,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
-from bs4 import BeautifulSoup as bs
 import pandas as pd
 import time
-BASE_URL = 'https://www.footballtransfers.com/us'
+Base_url = 'https://www.footballtransfers.com/us'
 def load_players():
     try:
         df = pd.read_csv('results.csv')
@@ -22,7 +21,6 @@ def load_players():
         return []
 
 def setup_driver():
-
     chrome_options = webdriver.ChromeOptions()
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=chrome_options)
@@ -30,39 +28,29 @@ def setup_driver():
     return driver
 
 def get_premier_league_link(driver):
-    "Get the Premier League players page URL."
-
     try:
-        driver.get(BASE_URL)
-        time.sleep(5)
-        soup = bs(driver.page_source, 'html.parser')
-        
-        pl_tag = soup.find('a', {'title': 'Premier League'})
+        pl_tag=driver.find_element(By.CSS_SELECTOR,"a[title='Premier League']")
         if not pl_tag:
             raise Exception("Premier League link not found.")
         
-        return f"{pl_tag.get('href')}/2024-2025"
+        return f"{pl_tag.get_attribute('href')}/2024-2025"
     except Exception as e:
         print(f"Error getting Premier League link:{e}")
 
 def get_valued_players_link(driver, pl_link):
-    "Get the 'all valued players' Premier League URL."
     try:
         driver.get(pl_link)
         time.sleep(3)
-        soup = bs(driver.page_source, 'html.parser')
-        
-        valued_tag = soup.find('a', {'title': 'View all valued players'})
+        valued_tag=driver.find_element(By.CSS_SELECTOR,"a[title='View all valued players']")
         if not valued_tag:
             raise Exception("All valued players link not found.")
         
-        return valued_tag.get('href')
+        return valued_tag.get_attribute('href')
     except Exception as e:
         print(f"Error getting valued players link: {e}")
 
 
 def scrape_player_values(driver, all_players, all_valued_players_link):
-    "Scrape player values from the paginated list."
     matched_players = []
     
     for page in range(1, 23):
@@ -72,27 +60,24 @@ def scrape_player_values(driver, all_players, all_valued_players_link):
                 WebDriverWait(driver, 20).until(
                     EC.presence_of_element_located((By.CSS_SELECTOR, "table.table-hover.no-cursor.table-striped.leaguetable.mvp-table.mb-0"))
                 )
-                
-                soup = bs(driver.page_source, 'html.parser')
-                rows = soup.select('table.table-hover.no-cursor.table-striped.leaguetable.mvp-table.mb-0 tbody#player-table-body tr')
-                
+                rows = driver.find_elements(By.CSS_SELECTOR, "table.table-hover.no-cursor.table-striped.leaguetable.mvp-table.mb-0 tbody#player-table-body tr")
+
                 print(f"Found {len(rows)} rows on page {page}")
                 time.sleep(2)
-                for row in rows[:1]:
-                    print(row)
+                for row in rows:
                     try:
-                        td_player = row.find('td', {'class': 'td-player'})
+                        td_player = row.find_element(By.CSS_SELECTOR,"td[class='td-player']")
                         if not td_player:
                             continue
                         
-                        name_tag = td_player.find('a') or td_player.find('span')
+                        name_tag = td_player.find_element(By.TAG_NAME,'a') 
                         if not name_tag:
                             continue
                         
                         player_name = name_tag.text.strip()
                         
                         if player_name in all_players:
-                            value_tag = row.find('span', {'class': 'player-tag'})
+                            value_tag = row.find_element(By.CSS_SELECTOR,"span[class='player-tag']")
                             transfer_value = value_tag.text.strip() if value_tag else "N/A"
                             
                             print(f"Found {player_name}: {transfer_value}")
@@ -102,7 +87,7 @@ def scrape_player_values(driver, all_players, all_valued_players_link):
                     
                     except Exception as e:
                         print(f"Error processing row: {e}")
-     
+
             except Exception as e:
                 print(f"Error on page {page}: {e}")
 
@@ -121,11 +106,11 @@ def search_missing_players(driver, player_name):
             search_box.send_keys(char)
             time.sleep(0.2)
 
-        time.sleep(4)
+        time.sleep(3)
         results = WebDriverWait(driver, 20).until(
             EC.presence_of_all_elements_located((By.CSS_SELECTOR, "div.searchResults a.newItem.player"))
         )
-        
+        # After getting result table, I'll find value by getting value of the first player in the result table
         if results:
             value = results[0].find_element(By.CSS_SELECTOR, "div.pl_value").text
             print(f"Found {player_name} with {value}")
@@ -155,22 +140,24 @@ def main():
             print("No players to process. Exiting.")
             return
         driver = setup_driver()
-        
-        # Get Premier League valued players page
+        driver.get(Base_url)
+        WebDriverWait(driver, 20).until(
+    EC.presence_of_element_located((By.CSS_SELECTOR, "a[title='Premier League']"))
+)
+    # Get Premier League valued players page
         pl_link = get_premier_league_link(driver)
         all_valued_players_link = get_valued_players_link(driver, pl_link)
         print(f"Valued players link: {all_valued_players_link}")
         
-        # Scrape player values
+    # Scrape player values
         matched_players = scrape_player_values(driver, all_players, all_valued_players_link)
         
-        # Go back to link 'https://www.footballtransfers.com/us' to find values of missing players 
-        driver.get(BASE_URL)
+    # Go back to link 'https://www.footballtransfers.com/us' to find values of missing players 
+        driver.get(Base_url)
         time.sleep(3)
-       # List of missing players
+    # List of missing players
         matched_names = [p['Name'] for p in matched_players]
         missing_players = [p for p in all_players if p not in matched_names]
-        print(f"Missing player: {missing_players}")
         
         for player in missing_players:
             value = search_missing_players(driver, player)
@@ -186,7 +173,7 @@ def main():
             print(f"{row['Name']}: {row['Value']}")
     
     except Exception as e:
-        print(f"Fatal error: {e}")
+        print(f"Main function error: {e}")
     finally:
         if driver:
             driver.quit()
