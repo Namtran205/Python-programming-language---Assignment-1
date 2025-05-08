@@ -93,7 +93,6 @@ def scrape_player_values(driver, all_players, all_valued_players_link):
     return matched_players
 
 def search_missing_players(driver, player_name):
-    """Search for a player not found in the main list."""
     try:
         # Wait for seach box to find and search player name
         search_box = WebDriverWait(driver, 20).until(
@@ -122,7 +121,6 @@ def search_missing_players(driver, player_name):
         print(f"Error when searching {player_name}: {e}")
         return 'Not found'
 def normalize_value(value):
-    "Convert value string to numeric."
     if not isinstance(value, str):
         return 0.0
     try:
@@ -135,9 +133,6 @@ def main():
     driver = None
     try:
         all_players = load_players()
-        if not all_players:
-            print("No players to process. Exiting.")
-            return
         driver = setup_driver()
         driver.get(Base_url)
         WebDriverWait(driver, 20).until(
