@@ -7,6 +7,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
+import os
+source_file=r'C:\Users\Admin\OneDrive\Python\Problem 1.py'
+destination_folder = r'C:\Users\Admin\OneDrive\Python\SourceCode'
+destination_file = os.path.join(destination_folder, os.path.basename(source_file))
+if os.path.exists(source_file):
+    os.makedirs(destination_folder, exist_ok=True)
+    os.rename(source_file, destination_file)
 
 def setup_driver():
     try:
