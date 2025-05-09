@@ -1,11 +1,4 @@
 import pandas as pd
-import os
-source_file=r'C:\Users\Admin\OneDrive\Python\Problem 2 - Identify the team with the highest score foe each statistic.py'
-destination_folder = r'C:\Users\Admin\OneDrive\Python\SourceCode'
-destination_file = os.path.join(destination_folder, os.path.basename(source_file))
-if os.path.exists(source_file):
-    os.makedirs(destination_folder, exist_ok=True)
-    os.rename(source_file, destination_file)
 
 df = pd.read_csv('results2.csv')
 df = df.rename(columns={df.columns[1]: 'Team'}) 
